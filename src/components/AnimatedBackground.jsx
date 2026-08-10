@@ -4,75 +4,85 @@ export default function AnimatedBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-
-    const handleResize = () => {
+    try {
+      const canvas = canvasRef.current;
       if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      
+      let animationFrameId;
 
-    // CMYK Color Orbs
-    const particles = [
-      { x: width * 0.2, y: height * 0.2, vx: 0.4, vy: 0.3, radius: 280, color: 'rgba(0, 160, 233, 0.12)' }, // Cyan
-      { x: width * 0.8, y: height * 0.4, vx: -0.3, vy: 0.4, radius: 320, color: 'rgba(230, 0, 126, 0.10)' }, // Magenta
-      { x: width * 0.4, y: height * 0.8, vx: 0.5, vy: -0.2, radius: 300, color: 'rgba(255, 237, 0, 0.14)' }, // Yellow
-      { x: width * 0.7, y: height * 0.85, vx: -0.4, vy: -0.3, radius: 250, color: 'rgba(0, 160, 233, 0.08)' }  // Cyan secondary
-    ];
+      let width = (canvas.width = window.innerWidth || 1200);
+      let height = (canvas.height = window.innerHeight || 800);
 
-    let mouseX = width / 2;
-    let mouseY = height / 2;
+      const handleResize = () => {
+        if (!canvas) return;
+        width = canvas.width = window.innerWidth || 1200;
+        height = canvas.height = window.innerHeight || 800;
+      };
+      window.addEventListener('resize', handleResize);
 
-    const handleMouseMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-    window.addEventListener('mousemove', handleMouseMove);
+      // CMYK Color Orbs
+      const particles = [
+        { x: width * 0.2, y: height * 0.2, vx: 0.4, vy: 0.3, radius: 280, color: 'rgba(0, 160, 233, 0.12)' }, // Cyan
+        { x: width * 0.8, y: height * 0.4, vx: -0.3, vy: 0.4, radius: 320, color: 'rgba(230, 0, 126, 0.10)' }, // Magenta
+        { x: width * 0.4, y: height * 0.8, vx: 0.5, vy: -0.2, radius: 300, color: 'rgba(255, 237, 0, 0.14)' }, // Yellow
+        { x: width * 0.7, y: height * 0.85, vx: -0.4, vy: -0.3, radius: 250, color: 'rgba(0, 160, 233, 0.08)' }  // Cyan secondary
+      ];
 
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
+      let mouseX = width / 2;
+      let mouseY = height / 2;
 
-      // Render floating fluid CMYK gradients
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
+      const handleMouseMove = (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      };
+      window.addEventListener('mousemove', handleMouseMove);
 
-        if (p.x - p.radius < 0 || p.x + p.radius > width) p.vx *= -1;
-        if (p.y - p.radius < 0 || p.y + p.radius > height) p.vy *= -1;
+      const render = () => {
+        try {
+          ctx.clearRect(0, 0, width, height);
 
-        // Subtle attraction to mouse cursor
-        const dx = mouseX - p.x;
-        const dy = mouseY - p.y;
-        p.x += dx * 0.0005;
-        p.y += dy * 0.0005;
+          // Render floating fluid CMYK gradients
+          particles.forEach((p) => {
+            p.x += p.vx;
+            p.y += p.vy;
 
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
-        gradient.addColorStop(0, p.color);
-        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            if (p.x - p.radius < 0 || p.x + p.radius > width) p.vx *= -1;
+            if (p.y - p.radius < 0 || p.y + p.radius > height) p.vy *= -1;
 
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
+            // Subtle attraction to mouse cursor
+            const dx = mouseX - p.x;
+            const dy = mouseY - p.y;
+            p.x += dx * 0.0005;
+            p.y += dy * 0.0005;
 
-      animationFrameId = requestAnimationFrame(render);
-    };
+            const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
+            gradient.addColorStop(0, p.color);
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
-    render();
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
+          });
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
-    };
+          animationFrameId = requestAnimationFrame(render);
+        } catch (err) {
+          // Guard against canvas render exceptions
+        }
+      };
+
+      render();
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('mousemove', handleMouseMove);
+        cancelAnimationFrame(animationFrameId);
+      };
+    } catch (err) {
+      console.warn('Canvas not supported or failed to initialize', err);
+    }
   }, []);
 
   return (
