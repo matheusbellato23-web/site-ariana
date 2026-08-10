@@ -66,7 +66,7 @@ export default function Header() {
           <a href="#" className="flex items-center gap-3 group">
             <div className="relative w-48 h-12 flex items-center">
               <img 
-                src="/logo_ariana.png" 
+                src="/logo_ariana.svg" 
                 alt="Gráfica Ariana Logo" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
