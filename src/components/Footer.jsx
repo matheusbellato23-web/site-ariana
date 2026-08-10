@@ -19,8 +19,8 @@ export default function Footer() {
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="w-56 h-16 flex items-center">
-              <img src="/logo_ariana_white.svg" alt="Gráfica Ariana Logo" className="w-full h-full object-contain filter drop-shadow-md" />
+            <div className="w-56 h-16 flex items-center bg-white/95 rounded-2xl p-3 shadow-lg">
+              <img src="/logo_ariana.png" alt="Gráfica Ariana Logo" className="w-full h-full object-contain" />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
               Mais de 20 anos de excelência em impressos em geral. Soluções completas em offset e digital para cartões de visita, panfletos, folders, banners, envelopes e projetos corporativos personalizados.

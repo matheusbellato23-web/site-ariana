@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Printer, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Printer, ArrowRight } from 'lucide-react';
 
 export default function IntroLoader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [passPhase, setPassPhase] = useState('CYAN'); // CYAN, MAGENTA, YELLOW, KEY, DONE
 
   useEffect(() => {
-    // Lock body scroll during intro loading
     document.body.style.overflow = 'hidden';
 
     const timer = setInterval(() => {
@@ -88,47 +87,15 @@ export default function IntroLoader({ onComplete }) {
               </div>
             </div>
 
-            {/* Logo Layer Revealer */}
-            <div className="relative w-56 h-16 flex items-center justify-center">
-              {/* Cyan Pass */}
+            {/* Original Logo Reveal Container */}
+            <div className="relative w-56 h-20 flex items-center justify-center bg-white/95 rounded-2xl p-3 shadow-2xl border border-white/30">
               <img 
-                src="/logo_ariana_white.svg" 
+                src="/logo_ariana.png" 
                 alt="Gráfica Ariana" 
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 filter drop-shadow-[0_0_12px_#00A0E9]"
+                className="w-full h-full object-contain transition-all duration-500"
                 style={{ 
-                  opacity: passPhase === 'CYAN' ? 0.95 : 0.2,
-                  mixBlendMode: 'screen'
-                }}
-              />
-              {/* Magenta Pass */}
-              <img 
-                src="/logo_ariana_white.svg" 
-                alt="Gráfica Ariana" 
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 filter drop-shadow-[0_0_12px_#E6007E]"
-                style={{ 
-                  opacity: passPhase === 'MAGENTA' || passPhase === 'YELLOW' || passPhase === 'KEY' ? 0.95 : 0,
-                  mixBlendMode: 'screen',
-                  transform: passPhase === 'MAGENTA' ? 'translate(1px, -1px)' : 'none'
-                }}
-              />
-              {/* Yellow Pass */}
-              <img 
-                src="/logo_ariana_white.svg" 
-                alt="Gráfica Ariana" 
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 filter drop-shadow-[0_0_12px_#FFED00]"
-                style={{ 
-                  opacity: passPhase === 'YELLOW' || passPhase === 'KEY' ? 0.95 : 0,
-                  mixBlendMode: 'screen'
-                }}
-              />
-              {/* Key Black Full Color Crisp Reveal */}
-              <img 
-                src="/logo_ariana_white.svg" 
-                alt="Gráfica Ariana" 
-                className="relative inset-0 w-full h-full object-contain transition-all duration-500"
-                style={{ 
-                  opacity: passPhase === 'KEY' ? 1 : 0,
-                  filter: 'brightness(1.1)'
+                  opacity: passPhase === 'KEY' || passPhase === 'YELLOW' || passPhase === 'MAGENTA' ? 1 : 0.4,
+                  filter: passPhase === 'CYAN' ? 'hue-rotate(180deg)' : passPhase === 'MAGENTA' ? 'hue-rotate(300deg)' : 'none'
                 }}
               />
             </div>

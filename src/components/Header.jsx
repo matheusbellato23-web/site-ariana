@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageSquare, MapPin, Menu, X, Printer, Sparkles } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Menu, X, Printer } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,11 +62,11 @@ export default function Header() {
       <nav className={`transition-all duration-300 ${isScrolled ? 'nav-glass-light shadow-md py-2' : 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 py-3'}`}>
         <div className="container-custom flex items-center justify-between h-16">
           
-          {/* Brand Logo */}
+          {/* Official Brand Logo PNG */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="relative w-48 h-12 flex items-center">
               <img 
-                src="/logo_ariana.svg" 
+                src="/logo_ariana.png" 
                 alt="Gráfica Ariana Logo" 
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
