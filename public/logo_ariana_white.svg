@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="100%" height="100%">
+  <defs>
+    <!-- CMYK Gradients for swashes -->
+    <linearGradient id="yellowSwashW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFED00"/>
+      <stop offset="100%" stop-color="#FFC700"/>
+    </linearGradient>
+    <linearGradient id="magentaSwashW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6007E"/>
+      <stop offset="100%" stop-color="#BE006B"/>
+    </linearGradient>
+    <linearGradient id="cyanSwashW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A0E9"/>
+      <stop offset="100%" stop-color="#0072BC"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="swashGlowW" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(15, 10)">
+    <!-- DYNAMIC CMYK SWASHES (Top to Bottom: Yellow, Magenta, Cyan) -->
+    <!-- Yellow Brush Stroke -->
+    <path d="M 270,110 C 340,65 470,25 650,20 C 580,35 450,60 290,135 Z" fill="url(#yellowSwashW)" filter="url(#swashGlowW)" />
+    <path d="M 300,100 C 375,50 515,20 660,18 C 585,34 435,64 315,125 Z" fill="#FFED00" opacity="0.9" />
+
+    <!-- Magenta Brush Stroke -->
+    <path d="M 260,160 C 325,115 475,70 680,55 C 585,78 435,114 280,190 Z" fill="url(#magentaSwashW)" filter="url(#swashGlowW)" />
+    <path d="M 285,145 C 365,90 535,60 685,52 C 595,74 455,108 305,180 Z" fill="#E6007E" opacity="0.9" />
+
+    <!-- Cyan Brush Stroke -->
+    <path d="M 330,230 C 380,180 520,125 720,110 C 615,130 465,170 345,265 Z" fill="url(#cyanSwashW)" filter="url(#swashGlowW)" />
+    <path d="M 350,210 C 410,155 555,112 730,108 C 630,128 480,165 360,250 Z" fill="#00A0E9" opacity="0.9" />
+
+    <!-- TEXT "Gráfica" (Italic Serif Elegance above ARIANA) -->
+    <text x="175" y="85" font-family="'Plus Jakarta Sans', 'Georgia', serif" font-weight="700" font-style="italic" font-size="52" fill="#FFFFFF" letter-spacing="1">Gráfica</text>
+
+    <!-- PERFECT GEOMETRIC BRAND TEXT "ARIANA" IN CRISP WHITE -->
+    <text x="30" y="240" font-family="'Outfit', 'Arial Black', sans-serif" font-weight="900" font-size="150" fill="#FFFFFF" letter-spacing="-1">ARIANA</text>
+
+    <!-- Subtitle "Impressos em Geral" -->
+    <text x="375" y="288" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="34" fill="#E2E8F0" letter-spacing="0">Impressos em Geral</text>
+
+    <!-- Trademark Symbol (R) -->
+    <circle cx="745" cy="120" r="14" fill="none" stroke="#FFFFFF" stroke-width="3" />
+    <text x="745" y="126" font-family="'Outfit', sans-serif" font-weight="700" font-size="18" fill="#FFFFFF" text-anchor="middle">R</text>
+  </g>
+</svg>

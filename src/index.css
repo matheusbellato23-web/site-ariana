@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+/* Gráfica Ariana - Luminous Print Studio Design System */
+:root {
+  /* Official CMYK Palette */
+  --cmyk-cyan: #00A0E9;
+  --cmyk-cyan-glow: rgba(0, 160, 233, 0.25);
+  --cmyk-magenta: #E6007E;
+  --cmyk-magenta-glow: rgba(230, 0, 126, 0.25);
+  --cmyk-yellow: #FFED00;
+  --cmyk-yellow-glow: rgba(255, 237, 0, 0.35);
+  --cmyk-key: #141720;
+  --cmyk-key-card: #FFFFFF;
+
+  /* Theme Colors - Luminous Paper Aesthetic */
+  --bg-main: #FAFAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F3F4F8;
+  --bg-glass: rgba(255, 255, 255, 0.88);
+  
+  --border-subtle: rgba(0, 0, 0, 0.08);
+
+  --text-primary: #141720;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 34px;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base Setup */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(0, 160, 233, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 90% 40%, rgba(230, 0, 126, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(255, 237, 0, 0.09) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F4F8;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00A0E9, #E6007E, #FFED00);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E6007E;
+}
+
+/* Selection */
+::selection {
+  background: #E6007E;
+  color: #FFFFFF;
+}
+
+/* Halftone Grid Pattern Overlay */
+.halftone-bg {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* CMYK Color Accent Lines */
+.cmyk-bar-header {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    #00A0E9 0%, 
+    #00A0E9 25%, 
+    #E6007E 25%, 
+    #E6007E 50%, 
+    #FFED00 50%, 
+    #FFED00 75%, 
+    #141720 75%, 
+    #141720 100%
+  );
+}
+
+/* Dynamic CMYK Paper Cards */
+.cmyk-glow-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.cmyk-glow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00A0E9, #E6007E, #FFED00);
+  opacity: 0.8;
+  transition: var(--transition-smooth);
+}
+
+.cmyk-glow-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 160, 233, 0.3);
+  box-shadow: 
+    -10px -10px 30px rgba(0, 160, 233, 0.10),
+    10px -10px 30px rgba(230, 0, 126, 0.10),
+    0px 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Printing Crop Marks Graphic Element */
+.crop-mark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.crop-mark-tl {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid #00A0E9;
+  border-left: 2px solid #00A0E9;
+}
+
+.crop-mark-tr {
+  top: 8px;
+  right: 8px;
+  border-top: 2px solid #E6007E;
+  border-right: 2px solid #E6007E;
+}
+
+.crop-mark-bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2px solid #EAB308;
+  border-left: 2px solid #EAB308;
+}
+
+.crop-mark-br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid #141720;
+  border-right: 2px solid #141720;
+}
+
+/* Typography Utilities */
+.text-gradient-cmyk {
+  background: linear-gradient(135deg, #00A0E9 0%, #E6007E 55%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan-magenta {
+  background: linear-gradient(135deg, #00A0E9, #E6007E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Buttons */
+.btn-cmyk-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #00A0E9, #E6007E);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(230, 0, 126, 0.25);
+  transition: var(--transition-bounce);
+  text-decoration: none;
+}
+
+.btn-cmyk-primary:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 160, 233, 0.35);
+}
+
+.btn-cmyk-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #141720;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.btn-cmyk-secondary:hover {
+  border-color: #00A0E9;
+  color: #00A0E9;
+  background: #F8FAFC;
+  box-shadow: 0 8px 20px rgba(0, 160, 233, 0.15);
+}
+
+/* Glassmorphism Navbar for Light Theme */
+.nav-glass-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Spot UV Shine Hover Effect */
+.spot-uv-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spot-uv-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 65%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 0.75s ease;
+  pointer-events: none;
+}
+
+.spot-uv-card:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* Responsive Container */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #141720;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  background: #F8FAFC;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+  color: #141720;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+  background: #FFFFFF;
+  border-color: #00A0E9;
+  box-shadow: 0 0 0 3px rgba(0, 160, 233, 0.2);
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234B5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
