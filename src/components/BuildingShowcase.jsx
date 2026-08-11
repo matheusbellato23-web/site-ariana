@@ -13,8 +13,8 @@ export default function BuildingShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Real Building Image Showcase */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-2xl p-3 bg-[#F8FAFC] group">
+          <div className="lg:col-span-6 relative reveal-on-scroll">
+            <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-2xl p-3 bg-[#F8FAFC] group interactive-card">
               <div className="crop-mark crop-mark-tl" />
               <div className="crop-mark crop-mark-tr" />
               <div className="crop-mark crop-mark-bl" />
@@ -48,7 +48,7 @@ export default function BuildingShowcase() {
           </div>
 
           {/* Right Column: Copy & Trust Highlights */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-6 reveal-on-scroll delay-200">
             
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold uppercase tracking-wider text-[#00A0E9]">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />

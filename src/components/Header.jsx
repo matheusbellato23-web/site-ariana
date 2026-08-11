@@ -4,22 +4,36 @@ import { Phone, MessageSquare, MapPin, Menu, X, Printer } from 'lucide-react';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Detect active section on scroll
+      const sections = ['servicos', 'calculadora', 'sede-propria', 'pre-impressao', 'portfolio', 'contato'];
+      const scrollPosition = window.scrollY + 140;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Serviços & Produtos', href: '#servicos' },
-    { label: 'Calculadora de Orçamento', href: '#calculadora' },
-    { label: 'Sede Própria', href: '#sede-propria' },
-    { label: 'Guia de Impressão', href: '#pre-impressao' },
-    { label: 'Portfólio', href: '#portfolio' },
-    { label: 'Contato', href: '#contato' },
+    { label: 'Serviços & Produtos', href: '#servicos', id: 'servicos' },
+    { label: 'Calculadora de Orçamento', href: '#calculadora', id: 'calculadora' },
+    { label: 'Sede Própria', href: '#sede-propria', id: 'sede-propria' },
+    { label: 'Guia de Impressão', href: '#pre-impressao', id: 'pre-impressao' },
+    { label: 'Portfólio', href: '#portfolio', id: 'portfolio' },
+    { label: 'Contato', href: '#contato', id: 'contato' },
   ];
 
   const handleWhatsApp = () => {
@@ -62,28 +76,37 @@ export default function Header() {
       <nav className={`transition-all duration-300 ${isScrolled ? 'nav-glass-light shadow-md py-2' : 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 py-3'}`}>
         <div className="container-custom flex items-center justify-between h-16">
           
-          {/* Official Brand Logo PNG */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-48 h-12 flex items-center">
+            <div className="relative h-12 flex items-center">
               <img 
                 src="/logo_ariana.svg" 
                 alt="Gráfica Ariana Logo" 
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                className="h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-7">
-            {navLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.href}
-                className="text-sm font-bold text-gray-700 hover:text-[#00A0E9] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#00A0E9] after:to-[#E6007E] hover:after:w-full after:transition-all"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  className={`text-sm font-bold transition-all duration-300 relative py-1.5 px-3 rounded-full ${
+                    isActive 
+                      ? 'text-[#00A0E9] bg-blue-50/80 shadow-sm' 
+                      : 'text-gray-700 hover:text-[#00A0E9] hover:bg-gray-50'
+                  }`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-[#00A0E9] to-[#E6007E] rounded-full animate-in fade-in duration-300" />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
           {/* Right Action CTA Button */}

@@ -42,7 +42,7 @@ export default function CmykMixer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 reveal-on-scroll">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold font-mono text-[#00A0E9]">
               <Droplets className="w-3.5 h-3.5" />
               Simulador de Tintas CMYK Offset

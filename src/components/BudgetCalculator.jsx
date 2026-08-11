@@ -102,7 +102,7 @@ _Enviado pelo site oficial da Gráfica Ariana_`;
       <div className="container-custom relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold uppercase tracking-wider text-[#00A0E9]">
             <Calculator className="w-4 h-4 text-[#E6007E]" />
             Orçamento Rápido & Sem Compromisso
@@ -116,7 +116,7 @@ _Enviado pelo site oficial da Gráfica Ariana_`;
         </div>
 
         {/* Form Container */}
-        <div className="max-w-4xl mx-auto cmyk-glow-card p-8 sm:p-12 bg-white rounded-3xl border border-gray-200/80 shadow-2xl relative">
+        <div className="reveal-on-scroll delay-150 max-w-4xl mx-auto cmyk-glow-card p-8 sm:p-12 bg-white rounded-3xl border border-gray-200/80 shadow-2xl relative">
           
           <form onSubmit={handleSendWhatsApp} className="space-y-8">
             

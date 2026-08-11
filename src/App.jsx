@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollReveal } from './hooks/useScrollReveal';
 import IntroLoader from './components/IntroLoader';
 import AnimatedBackground from './components/AnimatedBackground';
 import Header from './components/Header';
@@ -14,6 +15,7 @@ import { MessageSquare } from 'lucide-react';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
+  useScrollReveal();
 
   const handleWhatsAppFloating = () => {
     window.open('https://wa.me/5511981387865?text=Olá!%20Vim%20pelo%20site%20da%20Gráfica%20Ariana%20e%20gostaria%20de%20um%20orçamento.', '_blank');

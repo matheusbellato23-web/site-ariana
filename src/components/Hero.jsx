@@ -31,26 +31,26 @@ export default function Hero() {
           <div className="lg:col-span-7 space-y-8">
             
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold tracking-wide uppercase">
+            <div className="reveal-on-scroll inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold tracking-wide uppercase">
               <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00A0E9] via-[#E6007E] to-[#FFED00] animate-pulse" />
               <span className="text-gray-800">Tradição & Impressão Gráfica de Alta Precisão</span>
               <span className="text-xs text-[#00A0E9] font-mono px-2 py-0.5 rounded bg-blue-50">300 DPI</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black font-heading leading-[1.1] tracking-tight text-gray-900">
+            <h1 className="reveal-on-scroll delay-100 text-4xl sm:text-5xl md:text-6xl font-black font-heading leading-[1.1] tracking-tight text-gray-900">
               Sua marca impressa com{' '}
               <span className="text-gradient-cmyk">cores vivas</span> e acabamento impecável.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl font-normal leading-relaxed">
+            <p className="reveal-on-scroll delay-200 text-lg md:text-xl text-gray-600 max-w-2xl font-normal leading-relaxed">
               Da criação de artes ao impresso final offset e digital. Cartões de visita com Verniz Localizado UV, panfletos, pastas corporativas, banners e envelopes com a agilidade e qualidade que a sua empresa merece.
             </p>
 
             {/* Feature Highlights Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm">
+            <div className="reveal-on-scroll delay-300 grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+              <div className="interactive-card flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm">
                 <div className="p-2.5 rounded-xl bg-blue-50 text-[#00A0E9]">
                   <Layers className="w-5 h-5" />
                 </div>
@@ -60,7 +60,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm">
+              <div className="interactive-card flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm">
                 <div className="p-2.5 rounded-xl bg-pink-50 text-[#E6007E]">
                   <Zap className="w-5 h-5" />
                 </div>
@@ -70,7 +70,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm col-span-2 sm:col-span-1">
+              <div className="interactive-card flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-gray-200/80 shadow-sm col-span-2 sm:col-span-1">
                 <div className="p-2.5 rounded-xl bg-amber-50 text-amber-600">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -82,7 +82,7 @@ export default function Hero() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div className="reveal-on-scroll delay-400 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
               <a href="#calculadora" className="btn-cmyk-primary py-4 px-8 text-base shadow-xl">
                 <Calculator className="w-5 h-5" />
                 Monte Seu Orçamento Instantâneo
@@ -95,7 +95,7 @@ export default function Hero() {
             </div>
 
             {/* Social Trust */}
-            <div className="flex items-center gap-4 pt-2 text-xs text-gray-600">
+            <div className="reveal-on-scroll delay-500 flex items-center gap-4 pt-2 text-xs text-gray-600">
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-[#00A0E9] border-2 border-white flex items-center justify-center font-bold text-white text-xs shadow-md">C</div>
                 <div className="w-8 h-8 rounded-full bg-[#E6007E] border-2 border-white flex items-center justify-center font-bold text-white text-xs shadow-md">M</div>
@@ -111,9 +111,9 @@ export default function Hero() {
           </div>
 
           {/* Right Column: 3D Product Mockup Showcase */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative reveal-on-scroll delay-200">
             <div 
-              className="spot-uv-card rounded-3xl overflow-hidden border border-gray-200/90 bg-white shadow-2xl p-6 transition-all duration-300"
+              className="spot-uv-card rounded-3xl overflow-hidden border border-gray-200/90 bg-white shadow-2xl p-6 transition-all duration-300 animate-float-gentle"
               onMouseMove={handleMouseMove}
               style={{
                 boxShadow: `0 25px 50px -12px rgba(0, 0, 0, 0.12), ${(mousePos.x - 50) / 3}px ${(mousePos.y - 50) / 3}px 30px rgba(0, 160, 233, 0.18)`

@@ -36,7 +36,7 @@ export default function Portfolio() {
       <div className="container-custom relative z-10">
         
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold uppercase tracking-wider text-[#00A0E9]">
             <Sparkles className="w-3.5 h-3.5 text-[#E6007E]" />
             Galeria de Trabalhos Entregues
@@ -55,7 +55,7 @@ export default function Portfolio() {
             <div 
               key={idx}
               onClick={() => setSelectedImg(item)}
-              className="cmyk-glow-card group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200"
+              className={`cmyk-glow-card interactive-card reveal-on-scroll delay-${idx * 100 + 100} group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200`}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img 

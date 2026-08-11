@@ -88,7 +88,7 @@ export default function IntroLoader({ onComplete }) {
             </div>
 
             {/* Original Logo Reveal Container */}
-            <div className="relative w-56 h-20 flex items-center justify-center bg-white/95 rounded-2xl p-3 shadow-2xl border border-white/30">
+            <div className="relative max-w-xs w-full h-20 flex items-center justify-center bg-white/95 rounded-2xl p-4 shadow-2xl border border-white/30">
               <img 
                 src="/logo_ariana.svg" 
                 alt="Gráfica Ariana" 

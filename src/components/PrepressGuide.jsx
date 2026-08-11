@@ -43,22 +43,22 @@ export default function PrepressGuide() {
     <section id="pre-impressao" className="py-24 relative bg-[#F8FAFC] border-t border-gray-200">
       <div className="container-custom relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        {/* Section Header */}
+        <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold uppercase tracking-wider text-[#00A0E9]">
             <FileCheck className="w-4 h-4 text-[#E6007E]" />
-            Guia do Designer & Pré-Impressão
+            Manual de Pré-Impressão Gráfica
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-gray-900">
-            Como Enviar seu Arquivo <span className="text-gradient-cmyk">Sem Erros</span>
+            Como preparar seu arquivo para <span className="text-gradient-cmyk">Impressão Perfeita</span>
           </h2>
-          <p className="text-gray-600 text-base">
-            Se você já possui a arte pronta, siga estas 4 recomendações técnicas para garantir um impresso perfeito:
+          <p className="text-gray-600 text-base sm:text-lg">
+            Siga este checklist rápido para evitar erros comuns de impressão e garantir a máxima qualidade no resultado final.
           </p>
         </div>
 
         {/* Steps Selector */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="reveal-on-scroll grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           <div className="lg:col-span-5 space-y-3">
             {steps.map((step, idx) => {

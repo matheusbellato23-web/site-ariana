@@ -103,7 +103,7 @@ export default function ProductsServices() {
       <div className="container-custom relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="reveal-on-scroll flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold uppercase tracking-wider text-[#00A0E9] mb-3">
               <Layers className="w-3.5 h-3.5 text-[#E6007E]" />
@@ -119,7 +119,7 @@ export default function ProductsServices() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        <div className="reveal-on-scroll delay-100 flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -127,7 +127,7 @@ export default function ProductsServices() {
               className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-300 cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-gray-900 text-white shadow-lg scale-105'
-                  : 'bg-white text-gray-600 hover:text-gray-900 border border-gray-200 shadow-sm'
+                  : 'bg-white text-gray-600 hover:text-gray-900 border border-gray-200 shadow-sm hover:border-[#00A0E9]'
               }`}
             >
               {cat.label}
@@ -137,10 +137,10 @@ export default function ProductsServices() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((prod) => (
+          {filteredProducts.map((prod, idx) => (
             <div 
               key={prod.id} 
-              className="cmyk-glow-card group bg-white flex flex-col justify-between"
+              className={`cmyk-glow-card interactive-card reveal-on-scroll delay-${(idx % 3) * 100 + 100} group bg-white flex flex-col justify-between`}
             >
               <div>
                 {/* Product Image & Badge */}
