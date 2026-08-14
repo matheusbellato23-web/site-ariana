@@ -49,10 +49,16 @@ export default function Header() {
       <div className="bg-[#F1F4F9] text-xs py-2 px-4 border-b border-gray-200 hidden md:block">
         <div className="container-custom flex justify-between items-center text-gray-700">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2 font-medium">
+            <a 
+              href="https://maps.google.com/?q=Rua+Felisberto+Pereira+Santiago+53+Vila+Silviania+Carapicuiba+SP"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 font-medium hover:text-[#00A0E9] transition-colors"
+              title="Abrir no Google Maps GPS"
+            >
               <MapPin className="w-3.5 h-3.5 text-[#00A0E9]" />
-              Atendimento em Carapicuíba & Grande SP
-            </span>
+              Rua Felisberto Pereira Santiago, 53 - Carapicuíba/SP
+            </a>
             <span className="flex items-center gap-2 font-medium">
               <Printer className="w-3.5 h-3.5 text-[#E6007E]" />
               Parque Gráfico Próprio com Impressão Offset & Digital

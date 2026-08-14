@@ -33,8 +33,7 @@ export default function Hero() {
             {/* Top Badge */}
             <div className="reveal-on-scroll inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold tracking-wide uppercase">
               <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00A0E9] via-[#E6007E] to-[#FFED00] animate-pulse" />
-              <span className="text-gray-800">Tradição & Impressão Gráfica de Alta Precisão</span>
-              <span className="text-xs text-[#00A0E9] font-mono px-2 py-0.5 rounded bg-blue-50">300 DPI</span>
+              <span className="text-gray-800">Tradição & Impressão Gráfica de Alta Qualidade</span>
             </div>
 
             {/* Main Headline */}

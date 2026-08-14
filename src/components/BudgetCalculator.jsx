@@ -292,17 +292,17 @@ _Enviado pelo site oficial da Gráfica Ariana_`;
                 <span className="flex items-center gap-1.5 text-emerald-700 font-bold">
                   <FileCheck className="w-4 h-4" /> Prévia da Mensagem enviada ao WhatsApp:
                 </span>
-                <span className="font-semibold text-emerald-800">(11) 9.8138-7865</span>
+                <span className="font-semibold text-emerald-800 whitespace-nowrap">(11) 9.8138-7865</span>
               </div>
-              <div className="p-3.5 bg-white rounded-xl border border-emerald-200 text-gray-800 space-y-1 shadow-sm">
-                <div className="font-bold text-emerald-700">*SOLICITAÇÃO DE ORÇAMENTO - GRÁFICA ARIANA*</div>
-                <div>👤 Cliente: {formData.nome || '[Seu Nome]'}</div>
-                <div>📌 Serviço: {formData.servico}</div>
-                <div>📐 Tamanho: {formData.tamanho === 'Personalizado / Sob Medida' ? (formData.tamanhoCustom || 'Sob Medida') : formData.tamanho}</div>
-                <div>🔢 Quantidade: {formData.quantidade === 'Outra Quantidade' ? (formData.quantidadeCustom || 'Outra') : formData.quantidade}</div>
-                <div>🎨 Cores: {formData.cores}</div>
-                <div>📁 Arquivo Pronto?: {formData.temArquivo}</div>
-                {formData.observacoes && <div>✨ Obs: {formData.observacoes}</div>}
+              <div className="p-3.5 bg-white rounded-xl border border-emerald-200 text-gray-800 space-y-1.5 shadow-sm font-sans">
+                <div className="font-extrabold text-emerald-700 text-sm tracking-wide border-b border-emerald-100 pb-1">SOLICITAÇÃO DE ORÇAMENTO - GRÁFICA ARIANA</div>
+                <div><strong>👤 Cliente:</strong> {formData.nome || '[Seu Nome]'}</div>
+                <div><strong>📌 Serviço:</strong> {formData.servico}</div>
+                <div><strong>📐 Tamanho:</strong> {formData.tamanho === 'Personalizado / Sob Medida' ? (formData.tamanhoCustom || 'Sob Medida') : formData.tamanho}</div>
+                <div><strong>🔢 Quantidade:</strong> {formData.quantidade === 'Outra Quantidade' ? (formData.quantidadeCustom || 'Outra') : formData.quantidade}</div>
+                <div><strong>🎨 Cores:</strong> {formData.cores}</div>
+                <div><strong>📁 Arquivo Pronto?:</strong> {formData.temArquivo}</div>
+                {formData.observacoes && <div><strong>✨ Obs:</strong> {formData.observacoes}</div>}
               </div>
             </div>
 
@@ -310,10 +310,11 @@ _Enviado pelo site oficial da Gráfica Ariana_`;
             <div className="pt-2">
               <button
                 type="submit"
-                className="btn-cmyk-primary w-full py-4 px-8 text-lg font-bold shadow-2xl flex items-center justify-center gap-3 cursor-pointer"
+                className="btn-cmyk-primary w-full py-4 px-8 text-base sm:text-lg font-bold shadow-2xl flex items-center justify-center gap-2 cursor-pointer flex-wrap sm:flex-nowrap"
               >
-                <Send className="w-5 h-5 fill-current" />
-                Enviar Orçamento para o WhatsApp (11) 9.8138-7865
+                <Send className="w-5 h-5 fill-current shrink-0" />
+                <span>Enviar Orçamento para o WhatsApp</span>
+                <span className="whitespace-nowrap font-extrabold">(11) 9.8138-7865</span>
               </button>
               <div className="text-center text-xs text-gray-500 mt-3 flex items-center justify-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-[#E6007E]" />

@@ -113,13 +113,20 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#E6007E] shrink-0 mt-0.5" />
+              <a 
+                href="https://maps.google.com/?q=Rua+Felisberto+Pereira+Santiago+53+Vila+Silviania+Carapicuiba+SP" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-start gap-3 group hover:opacity-90 transition-opacity"
+              >
+                <MapPin className="w-5 h-5 text-[#E6007E] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <div>
-                  <div className="text-gray-400 text-xs font-medium">Localização da Sede Própria</div>
-                  <span className="text-gray-300">Carapicuíba - Grande São Paulo / SP</span>
+                  <div className="text-gray-400 text-xs font-medium">Localização da Sede Própria (Google Maps GPS):</div>
+                  <span className="text-gray-200 text-xs font-semibold group-hover:text-[#00A0E9] group-hover:underline transition-colors block leading-snug">
+                    Rua Felisberto Pereira Santiago, 53 - Vila Silviania - Carapicuíba - SP
+                  </span>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-start gap-3 pt-1">
                 <Globe className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
