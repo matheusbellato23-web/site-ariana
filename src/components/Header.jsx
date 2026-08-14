@@ -82,12 +82,12 @@ export default function Header() {
       <nav className={`transition-all duration-300 ${isScrolled ? 'nav-glass-light shadow-md py-2' : 'bg-white/95 backdrop-blur-md border-b border-gray-200/80 py-3'}`}>
         <div className="container-custom flex items-center justify-between h-16">
           
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative h-12 flex items-center">
+          <a href="#" className="flex items-center gap-3 group shrink-0">
+            <div className="relative h-11 flex items-center">
               <img 
                 src="/logo_ariana.svg" 
                 alt="Gráfica Ariana Logo" 
-                className="h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className="h-9 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           </a>
@@ -116,24 +116,25 @@ export default function Header() {
           </div>
 
           {/* Right Action CTA Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button 
               onClick={handleWhatsApp}
-              className="px-5 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-[#00A0E9] to-[#E6007E] text-white shadow-lg shadow-[#E6007E]/20 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              className="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm bg-gradient-to-r from-[#00A0E9] to-[#E6007E] text-white shadow-md flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              Orçamento WhatsApp
+              <MessageSquare className="w-4 h-4 fill-current shrink-0" />
+              <span className="hidden sm:inline">Orçamento WhatsApp</span>
+              <span className="inline sm:hidden">WhatsApp</span>
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-gray-700 hover:text-[#00A0E9] focus:outline-none rounded-xl bg-gray-100 border border-gray-200 active:scale-95 transition-transform"
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 text-gray-700 hover:text-[#00A0E9] focus:outline-none rounded-xl bg-gray-100 border border-gray-200"
-            aria-label="Menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </nav>
 

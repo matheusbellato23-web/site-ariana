@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-gradient-to-b from-[#FAFAFC] via-[#F5F7FC] to-[#FAFAFC]">
+    <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-44 md:pb-28 overflow-hidden bg-gradient-to-b from-[#FAFAFC] via-[#F5F7FC] to-[#FAFAFC]">
       
       {/* Background Halftone & Ambient Ink Glows */}
       <div className="absolute inset-0 halftone-bg opacity-40 pointer-events-none" />
@@ -25,19 +25,19 @@ export default function Hero() {
       <div className="absolute bottom-10 left-1/3 w-96 h-96 rounded-full bg-[#FFED00]/20 blur-[130px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Headline & Action CTAs */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             
             {/* Top Badge */}
-            <div className="reveal-on-scroll inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-xs font-bold tracking-wide uppercase">
-              <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00A0E9] via-[#E6007E] to-[#FFED00] animate-pulse" />
-              <span className="text-gray-800">Tradição & Impressão Gráfica de Alta Qualidade</span>
+            <div className="reveal-on-scroll inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white border border-gray-200 shadow-sm text-[11px] sm:text-xs font-bold tracking-wide uppercase max-w-full">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gradient-to-r from-[#00A0E9] via-[#E6007E] to-[#FFED00] animate-pulse shrink-0" />
+              <span className="text-gray-800 truncate">Tradição & Impressão Gráfica de Alta Qualidade</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="reveal-on-scroll delay-100 text-4xl sm:text-5xl md:text-6xl font-black font-heading leading-[1.1] tracking-tight text-gray-900">
+            <h1 className="reveal-on-scroll delay-100 text-3xl sm:text-5xl md:text-6xl font-black font-heading leading-[1.15] sm:leading-[1.1] tracking-tight text-gray-900">
               Sua marca impressa com{' '}
               <span className="text-gradient-cmyk">cores vivas</span> e acabamento impecável.
             </h1>

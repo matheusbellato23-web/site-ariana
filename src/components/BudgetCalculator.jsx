@@ -116,7 +116,7 @@ Enviado pelo site oficial da Gráfica Ariana`;
         </div>
 
         {/* Form Container */}
-        <div className="reveal-on-scroll delay-150 max-w-4xl mx-auto cmyk-glow-card p-8 sm:p-12 bg-white rounded-3xl border border-gray-200/80 shadow-2xl relative">
+        <div className="reveal-on-scroll delay-150 max-w-4xl mx-auto cmyk-glow-card p-5 sm:p-12 bg-white rounded-2xl sm:rounded-3xl border border-gray-200/80 shadow-2xl relative">
           
           <form onSubmit={handleSendWhatsApp} className="space-y-8">
             

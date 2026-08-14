@@ -92,13 +92,14 @@ export default function Portfolio() {
 
       {/* Lightbox Modal */}
       {selectedImg && (
-        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-xl flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-2xl p-6">
+        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+          <div className="relative max-w-4xl w-full bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-200 shadow-2xl p-4 sm:p-6 max-h-[90vh] overflow-y-auto">
             <button 
               onClick={() => setSelectedImg(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition-colors z-10 cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 transition-colors z-20 cursor-pointer active:scale-95"
+              aria-label="Fechar"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
