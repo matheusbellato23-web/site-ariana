@@ -36,7 +36,7 @@ export default function BuildingShowcase() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-gray-900">Prédio Próprio Gráfica Ariana</div>
-                      <div className="text-xs text-gray-600">Impressos em Geral • <span className="whitespace-nowrap">Tel: (11) 4188-6667</span></div>
+                      <div className="text-xs text-gray-600">Impressos em Geral | <span className="whitespace-nowrap">Tel: (11) 4188-6667</span></div>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300">

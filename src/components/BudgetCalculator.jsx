@@ -78,16 +78,16 @@ export default function BudgetCalculator() {
     const finalQuantidade = formData.quantidade === 'Outra Quantidade' ? (formData.quantidadeCustom || 'Outra') : formData.quantidade;
 
     const message = 
-`*SOLICITAÇÃO DE ORÇAMENTO - GRÁFICA ARIANA*
+`SOLICITAÇÃO DE ORÇAMENTO - GRÁFICA ARIANA
 ---------------------------------------
-👤 *Cliente/Empresa:* ${formData.nome || 'Não informado'}
-📌 *Serviço:* ${formData.servico}
-📐 *Tamanho:* ${finalTamanho}
-🔢 *Quantidade:* ${finalQuantidade}
-🎨 *Cores:* ${formData.cores}
-📁 *Tem Arquivo Pronto?:* ${formData.temArquivo}
-${formData.observacoes ? `✨ *Observações/Acabamentos:* ${formData.observacoes}\n` : ''}---------------------------------------
-_Enviado pelo site oficial da Gráfica Ariana_`;
+Cliente/Empresa: ${formData.nome || 'Não informado'}
+Serviço: ${formData.servico}
+Tamanho: ${finalTamanho}
+Quantidade: ${finalQuantidade}
+Cores: ${formData.cores}
+Tem Arquivo Pronto?: ${formData.temArquivo}
+${formData.observacoes ? `Observações/Acabamentos: ${formData.observacoes}\n` : ''}---------------------------------------
+Enviado pelo site oficial da Gráfica Ariana`;
 
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/5511981387865?text=${encoded}`, '_blank');
@@ -296,13 +296,13 @@ _Enviado pelo site oficial da Gráfica Ariana_`;
               </div>
               <div className="p-3.5 bg-white rounded-xl border border-emerald-200 text-gray-800 space-y-1.5 shadow-sm font-sans">
                 <div className="font-extrabold text-emerald-700 text-sm tracking-wide border-b border-emerald-100 pb-1">SOLICITAÇÃO DE ORÇAMENTO - GRÁFICA ARIANA</div>
-                <div><strong>👤 Cliente:</strong> {formData.nome || '[Seu Nome]'}</div>
-                <div><strong>📌 Serviço:</strong> {formData.servico}</div>
-                <div><strong>📐 Tamanho:</strong> {formData.tamanho === 'Personalizado / Sob Medida' ? (formData.tamanhoCustom || 'Sob Medida') : formData.tamanho}</div>
-                <div><strong>🔢 Quantidade:</strong> {formData.quantidade === 'Outra Quantidade' ? (formData.quantidadeCustom || 'Outra') : formData.quantidade}</div>
-                <div><strong>🎨 Cores:</strong> {formData.cores}</div>
-                <div><strong>📁 Arquivo Pronto?:</strong> {formData.temArquivo}</div>
-                {formData.observacoes && <div><strong>✨ Obs:</strong> {formData.observacoes}</div>}
+                <div><strong>Cliente:</strong> {formData.nome || '[Seu Nome]'}</div>
+                <div><strong>Serviço:</strong> {formData.servico}</div>
+                <div><strong>Tamanho:</strong> {formData.tamanho === 'Personalizado / Sob Medida' ? (formData.tamanhoCustom || 'Sob Medida') : formData.tamanho}</div>
+                <div><strong>Quantidade:</strong> {formData.quantidade === 'Outra Quantidade' ? (formData.quantidadeCustom || 'Outra') : formData.quantidade}</div>
+                <div><strong>Cores:</strong> {formData.cores}</div>
+                <div><strong>Arquivo Pronto?:</strong> {formData.temArquivo}</div>
+                {formData.observacoes && <div><strong>Obs:</strong> {formData.observacoes}</div>}
               </div>
             </div>
 

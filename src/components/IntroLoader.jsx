@@ -121,10 +121,10 @@ export default function IntroLoader({ onComplete }) {
 
         {/* Pass Status Text */}
         <div className="h-6 mb-4 font-mono text-xs sm:text-sm font-semibold tracking-wider text-gray-200">
-          {passPhase === 'CYAN' && <span className="text-[#00A0E9]">→ Calibrando Passagem Cian 300 DPI...</span>}
-          {passPhase === 'MAGENTA' && <span className="text-[#E6007E]">→ Aplicando Camada Magenta Offset...</span>}
-          {passPhase === 'YELLOW' && <span className="text-[#FFED00]">→ Ajustando Retícula Amarela & Vivacidade...</span>}
-          {passPhase === 'KEY' && <span className="text-white">✓ Alinhamento CMYK Perfeito Concluído!</span>}
+          {passPhase === 'CYAN' && <span className="text-[#00A0E9]">Calibrando Passagem Cian 300 DPI...</span>}
+          {passPhase === 'MAGENTA' && <span className="text-[#E6007E]">Aplicando Camada Magenta Offset...</span>}
+          {passPhase === 'YELLOW' && <span className="text-[#FFED00]">Ajustando Retícula Amarela & Vivacidade...</span>}
+          {passPhase === 'KEY' && <span className="text-white">Alinhamento CMYK Perfeito Concluído!</span>}
         </div>
 
         {/* CMYK Progress Bar */}
