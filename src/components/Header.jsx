@@ -83,11 +83,11 @@ export default function Header() {
         <div className="container-custom flex items-center justify-between h-16">
           
           <a href="#" className="flex items-center gap-3 group shrink-0">
-            <div className="relative h-11 flex items-center">
+            <div className="relative h-14 flex items-center">
               <img 
                 src="/logo_ariana.svg" 
                 alt="Gráfica Ariana Logo" 
-                className="h-9 sm:h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className="h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           </a>

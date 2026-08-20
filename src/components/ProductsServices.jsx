@@ -140,7 +140,8 @@ export default function ProductsServices() {
           {filteredProducts.map((prod, idx) => (
             <div 
               key={prod.id} 
-              className={`cmyk-glow-card interactive-card reveal-on-scroll delay-${(idx % 3) * 100 + 100} group bg-white flex flex-col justify-between`}
+              className="cmyk-glow-card interactive-card group bg-white flex flex-col justify-between"
+              style={{ animationDelay: `${(idx % 3) * 100 + 100}ms` }}
             >
               <div>
                 {/* Product Image & Badge */}
