@@ -22,7 +22,7 @@ export default function Footer() {
               <img src="/logo_ariana_white.svg" alt="Gráfica Ariana Logo" className="h-12 w-auto object-contain" />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-              Mais de 20 anos de excelência em impressos em geral. Soluções completas em offset e digital para cartões de visita, panfletos, folders, banners, envelopes e projetos corporativos personalizados.
+              Mais de 25 anos de excelência em impressos em geral. Soluções completas em offset e digital para cartões de visita, panfletos, folders, banners, envelopes e projetos corporativos personalizados.
             </p>
             
             {/* Social Links */}
